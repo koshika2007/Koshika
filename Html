@@ -1,25 +1,189 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Koshika | Portfolio</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Butterfly Portfolio</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">koshika</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Navbar -->
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to My Creative World</h1>
+                <p>I'm a passionate designer and developer who creates beautiful, functional digital experiences. Let my ideas take flight like butterflies!</p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+        </div>
+        
+        <!-- Animated Butterflies -->
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+    </section>
 
-  <header>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">koshika</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Hello! I'm koshika, a Creative Developer</h3>
+                    <p>I specialize in creating visually stunning and highly functional websites and applications. With a background in both design and development, I bring a unique perspective to every project.</p>
+                    <p>My approach combines technical expertise with artistic vision, resulting in digital experiences that are not only effective but also beautiful and engaging.</p>
+                    <p>When I'm not coding, you can find me exploring nature, photographing butterflies, or experimenting with new creative technologies.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80" alt="Profile Image">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <nav class="navbar">
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" alt="Project 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Butterfly Conservation App</h3>
+                        <p>An interactive app that helps identify and track butterfly species for conservation efforts.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80" alt="Project 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Nature Inspired Website</h3>
+                        <p>A responsive website with organic animations and nature-inspired design elements.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Project 3">
+                    </div>
+                    <div class="project-info">
+                        <h3>Interactive Art Installation</h3>
+                        <p>An immersive digital art experience that responds to user movement and interaction.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <h1 class="logo">Koshika</h1>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Creating intuitive and beautiful user interfaces and experiences.</p>
+                </div>
+                
+                <div class="skill">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Building responsive and functional websites using modern technologies.</p>
+                </div>
+                
+                <div class="skill">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Development</h3>
+                    <p>Developing cross-platform mobile applications with elegant UIs.</p>
+                </div>
+                
+                <div class="skill">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h3>Graphic Design</h3>
+                    <p>Designing logos, illustrations, and other visual elements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <ul class="nav-links">
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Create Something Beautiful Together</h3>
+                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                    <p><i class="fas fa-envelope"></i> email@example.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (234) 567-8901</p>
+                    <p><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Butterfly Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
