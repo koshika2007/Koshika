@@ -1,5 +1,156 @@
-function showMessage() {
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            if(document.querySelector('.nav-links').classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        }
+    });
+});
 
-  alert("Hello Koshika! Welcome to your portfolio 🚀");
+// Header scroll effect
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if(window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
 
+// Mobile menu toggle
+function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
 }
+
+document.querySelector('.hamburger').addEventListener('click', toggleMobileMenu);
+
+// Form submission
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Simple form validation
+    const inputs = this.querySelectorAll('input, textarea');
+    let isValid = true;
+    
+    inputs.forEach(input => {
+        if(!input.value.trim()) {
+            input.style.border = '2px solid red';
+            isValid = false;
+            
+            // Remove error style on input
+            input.addEventListener('input', function() {
+                this.style.border = 'none';
+            });
+        }
+    });
+    
+    if(isValid) {
+        // Simulate form submission
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, 1500);
+    }
+});
+
+// Create additional floating elements
+function createFloatingElements() {
+    const colors = ['#ff4d94', '#4d79ff', '#ffcc00', '#ff6b6b', '#4ecdc4'];
+    const body = document.querySelector('body');
+    
+    for (let i = 0; i < 15; i++) {
+        const element = document.createElement('div');
+        element.classList.add('floating-element');
+        
+        // Random properties
+        const size = Math.random() * 20 + 5;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Set styles
+        element.style.width = `${size}px`;
+        element.style.height = `${size}px`;
+        element.style.background = color;
+        element.style.borderRadius = '50%';
+        element.style.position = 'fixed';
+        element.style.opacity = '0.7';
+        element.style.boxShadow = `0 0 10px ${color}`;
+        element.style.zIndex = '0';
+        
+        // Random position
+        element.style.left = `${Math.random() * 100}vw`;
+        element.style.top = `${Math.random() * 100}vh`;
+        
+        // Add animation
+        element.style.animation = `float ${Math.random() * 10 + 10}s infinite ease-in-out`;
+        element.style.animationDelay = `${Math.random() * 5}s`;
+        
+        body.appendChild(element);
+    }
+}
+
+// Intersection Observer for animation on scroll
+function initScrollAnimations() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = `fadeIn 1s forwards`;
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections and project cards
+    document.querySelectorAll('section, .project-card, .skill').forEach(element => {
+        element.style.opacity = '0';
+        observer.observe(element);
+    });
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    createFloatingElements();
+    initScrollAnimations();
+    
+    // Add initial header class
+    if(window.scrollY > 50) {
+        document.querySelector('header').classList.add('scrolled');
+    }
+});
+
+// Parallax effect for hero section
+window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    hero.style.backgroundPositionY = -(scrolled * 0.2) + 'px';
+});
